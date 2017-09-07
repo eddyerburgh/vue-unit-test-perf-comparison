@@ -4,13 +4,13 @@ This is a performance comparison between test runners testing Vue SFCs.
 
 ## Comparison
 
-| Runner        | Time  (300 tests) | Time  (600 tests)| Time  (1200 tests)|
-| ------------- |-------------|-------------|-------------|
-| tape | 2.81s |4.16s | 5.50s |
-| jest | 2.96s |3.39s | 4.81s |
-| mocha-webpack | 4.34s |4.51s | 5.63s |
-| karma-mocha | 6.85s |8.88s | 11.26s |
-| ava | 9.72s |17.77s | 27.42s |
+| Runner        | Time  (300 tests) | Time  (600 tests)| Time  (1200 tests)|Time  (3000 tests)|Time  (9000 tests)|
+| ------------- |-------------|-------------|-------------|-------------|-------------|
+| tape | 2.81s |4.16s | 5.50s | 11.32s |33.56s|
+| jest | 2.96s |3.39s | 4.81s | 7.50s |15.20s|
+| mocha-webpack | 4.34s |4.51s | 5.63s | 9.78s |19.47s|
+| karma-mocha | 6.85s |8.88s | 11.26s | 22.63s |26.98s|
+| ava | 9.72s |17.77s | 27.42s | 68.23s |291.22s|
 
 ## Details
 
