@@ -1,6 +1,5 @@
 #OS files
 .DS_Store
-node_modules
 
 # Editor files
 /.idea
@@ -10,7 +9,6 @@ node_modules
 *.sln
 **.swp
 *.sw*
-coverage
 
 # Logs
 logs
