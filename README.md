@@ -22,6 +22,10 @@ Currently tape is the fastest.
 
 AVA is by far the slowest. This is because the [current suggested method](https://github.com/avajs/ava/blob/master/docs/recipes/precompiling-with-webpack.md) does not utilize caching. If caching was added, it would be comparable to Jest.
 
-## Plan for repository
+## Usage
 
-The plan for this repository is to add more components and more complex tests. As better testing methods are found, the directories and results will be updated.
+Running the test script will generate a results table in RESULTS.md:
+
+```
+npm test
+```
