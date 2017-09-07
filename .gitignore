@@ -21,3 +21,5 @@ pids
 *.pid
 *.seed
 *.pid.lock
+
+RESULTS.md
