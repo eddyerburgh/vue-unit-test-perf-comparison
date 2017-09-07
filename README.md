@@ -4,7 +4,7 @@ This is a performance comparison between test runners testing Vue SFCs.
 
 ## Comparison
 
-| Runner        | Time  (300 tests) | Time  (600 tests)| Time  (1200 tests)|Time  (3000 tests)|Time  (9000 tests)|
+| Runner        | 300 tests | 600 tests | 1200 tests|3000 tests|9000 tests|
 | ------------- |-------------|-------------|-------------|-------------|-------------|
 | tape | 2.81s |4.16s | 5.50s | 11.32s |33.56s|
 | jest | 2.96s |3.39s | 4.81s | 7.50s |15.20s|
