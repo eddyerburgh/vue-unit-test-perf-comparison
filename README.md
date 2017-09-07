@@ -6,15 +6,17 @@ This is a performance comparison between test runners testing Vue SFCs.
 
 | Runner        | Time           |
 | ------------- |:-------------:|
-| tape | 3.386s |
-| ava | 10.468s |
-| jest | 4.524s |
-| karma-mocha | 8.732s |
-| mocha-webpack | 5.519s |
+| tape | 2.84s |
+| ava | 8.90s |
+| jest | 3.24s |
+| karma-mocha | 6.59s |
+| mocha-webpack | 4.20s |
 
 ## Details
 
 The tests use one component (currently). They run 10 files of 30 tests, so 300 tests overall.
+
+The results are the average of 10 runs.
 
 ## Results
 
@@ -29,3 +31,5 @@ Running the test script will generate a results table in RESULTS.md:
 ```
 npm test
 ```
+
+**Warning: It takes around 5 minutes to run**
