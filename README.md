@@ -4,20 +4,19 @@ This is a performance comparison between test runners testing Vue SFCs.
 
 ## Comparison
 
-| Runner        | Time  (average of 10 runs of 300 tests)         |
+| Runner        | Time  (300 tests)         || Time  (600 tests)
 | ------------- |:-------------:|
-| tape | 3.08s |
-| jest | 3.32s |
-| mocha-webpack | 4.51s |
-| karma-mocha | 6.30s |
-| ava | 8.35s |
-
+| tape | 2.81s |5.36s |
+| jest | 2.96s |5.36s |
+| mocha-webpack | 4.34s |5.36s |
+| karma-mocha | 6.85s |5.36s |
+| ava | 9.72s |5.36s |
 
 ## Details
 
-The tests use one SFC. They run 10 files of 30 tests, so 300 tests overall.
+The tests use two SFC. You can see the tests inside the runner directories.
 
-The Time is the average of 10 runs of 300 tests.
+The time is the average of 10 runs.
 
 ## Results
 

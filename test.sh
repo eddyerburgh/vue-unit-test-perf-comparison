@@ -6,6 +6,7 @@ function generate_test_files {
   for i in {0..10}
   do
      cp Basic.spec.js "Basic$i.spec.js"
+     cp Parent.spec.js "Parent$i.spec.js"
   done
 }
 
@@ -13,6 +14,7 @@ function remove_test_files {
   for i in {0..10}
   do
      rm "Basic$i.spec.js"
+     rm "Parent$i.spec.js"
   done
 }
 
