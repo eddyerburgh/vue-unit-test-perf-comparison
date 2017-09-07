@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a test_runners=( "jest" )
+declare -a test_runners=( "jest" "ava" )
 
 for test_runner in "${test_runners[@]}"
 do (
