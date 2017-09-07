@@ -33,3 +33,23 @@ npm test
 ```
 
 **Warning: It takes around 5 minutes to run**
+
+## Contributing
+
+Feel free to add an extra test setup. The aim of this project is to find the best setup out there.
+
+### Add a new setup
+* Create directory with a descriptive name, using test template below
+* Add `Basic.spec.js` file with 30 tests
+* Create a `test` script in your package.json
+* Add name of directory to `test_runners` array in `test.sh`
+* Run tests from the root by running `npm test`
+
+### Test template
+Copy this and change the syntax to match your test runner.
+```
+it('renders correct text', () => {
+  const wrapper = shallow(Basic)
+  expect(wrapper.find('.hello h1').text()).toBe('Welcome to Your Vue.js App')
+})
+```
