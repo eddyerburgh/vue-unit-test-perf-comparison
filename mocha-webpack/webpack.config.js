@@ -1,4 +1,3 @@
-const path = require('path')
 var nodeExternals = require('webpack-node-externals')
 
 module.exports = {
@@ -6,7 +5,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,

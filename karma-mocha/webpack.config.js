@@ -1,16 +1,10 @@
-var path = require('path')
-
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
-}
-
 module.exports = {
   output: {
     path: './',
     filename: '[name].js'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json']
   },
   module: {
     rules: [

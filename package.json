@@ -1,0 +1,32 @@
+{
+  "name": "vue-test-utils-perf-test",
+  "version": "1.0.0",
+  "description": "Vue Test Runner SFC comparison",
+  "main": "test.sh",
+  "scripts": {
+    "lint": "eslint --ext .js,.vue .",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "./test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddyerburgh/vue-unit-test-perf-comparrison.git"
+  },
+  "author": "Edd Yerburgh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eddyerburgh/vue-unit-test-perf-comparrison/issues"
+  },
+  "homepage": "https://github.com/eddyerburgh/vue-unit-test-perf-comparrison#readme",
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  },
+  "dependencies": {
+    "eslint-plugin-vue": "beta"
+  }
+}
