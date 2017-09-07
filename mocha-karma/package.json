@@ -1,0 +1,37 @@
+{
+  "name": "avoriaz-karma-mocha-example",
+  "version": "1.0.0",
+  "description": "An example project using avoriaz, karma and mocha to run tests",
+  "author": "Edd Yerburgh <edward.yerburgh@gmail.com>",
+  "private": true,
+  "scripts": {
+    "test": "karma start karma.conf.js --single-run"
+  },
+  "standard": {
+    "ignore": [
+      "build/**/*",
+      "config/**/*"
+    ]
+  },
+  "dependencies": {
+    "babel-core": "^6.0.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.0.0",
+    "babel-preset-stage-2": "^6.0.0",
+    "chai": "^3.5.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-spec-reporter": "^0.0.31",
+    "karma-webpack": "^2.0.4",
+    "mocha": "^3.5.0",
+    "puppeteer": "^0.10.2",
+    "vue": "^2.4.2",
+    "vue-loader": "^13.0.4",
+    "vue-style-loader": "^1.0.0",
+    "vue-template-compiler": "^2.4.2",
+    "vue-test-utils": "https://github.com/vuejs/vue-test-utils",
+    "webpack": "^3.5.6"
+  }
+}
