@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a test_runners=( "tape" "ava" "jest" "karma-mocha" "mocha-webpack")
+declare -a test_runners=( "tape"  "jest" "mocha-webpack"  "karma-mocha" "ava")
 
 function generate_test_files {
   for i in {0..10}
