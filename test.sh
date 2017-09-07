@@ -1,6 +1,6 @@
 #!/bin/bash
 
-declare -a test_runners=( "jest" "ava" )
+declare -a test_runners=( "jest" "ava" "mocha-webpack" )
 
 for test_runner in "${test_runners[@]}"
 do (
