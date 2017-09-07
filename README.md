@@ -48,7 +48,7 @@ Feel free to add an extra test setup. The aim of this project is to find the bes
 
 ### Test template
 Copy this and change the syntax to match your test runner.
-```
+```js
 it('renders correct text', () => {
   const wrapper = shallow(Basic)
   expect(wrapper.find('.hello h1').text()).toBe('Welcome to Your Vue.js App')
