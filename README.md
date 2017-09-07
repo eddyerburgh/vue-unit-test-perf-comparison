@@ -18,7 +18,7 @@ The tests use one component (currently). They run 10 files of 30 tests, so 300 t
 
 ## Results
 
-Currently Jest is the fastest. Mainly because it utilizes caching more effectively than mocha-webpack.
+Currently tape is the fastest.
 
 AVA is by far the slowest. This is because the [current suggested method](https://github.com/avajs/ava/blob/master/docs/recipes/precompiling-with-webpack.md) does not utilize caching. If caching was added, it would be comparable to Jest.
 
