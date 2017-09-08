@@ -6,7 +6,10 @@
   "scripts": {
     "lint": "eslint --ext .js,.vue .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "./test.sh"
+    "test": "./test.sh",
+    "test:100": "./test.sh 100",
+    "test:1000": "./test.sh 1000",
+    "test:10000": "./test.sh 10000"
   },
   "repository": {
     "type": "git",
