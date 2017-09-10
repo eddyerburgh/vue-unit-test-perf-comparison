@@ -1,6 +1,6 @@
 import { shallow } from 'vue-test-utils'
 import test from 'tape'
-import Basic from './Basic.vue'
+import Basic from '../components/Basic.vue'
 
 test('Basic.vue', t => {
   t.plan(1)

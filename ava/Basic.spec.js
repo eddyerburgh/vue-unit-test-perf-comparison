@@ -1,6 +1,6 @@
 import { shallow } from 'vue-test-utils'
 import test from 'ava'
-import Basic from './Basic.vue'
+import Basic from '../components/Basic.vue'
 
 test('Basic.vue', t => {
   const wrapper = shallow(Basic)
