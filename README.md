@@ -38,7 +38,7 @@ npm test
 
 Feel free to add an extra test setup. The aim of this project is to find the best setup out there.
 
-### Add a new setup
+### Add a new setup
 * Create directory with a descriptive name, using test template below
 * Add `Basic.spec.js` file with 30 tests
 * Create a `test` script in your package.json
