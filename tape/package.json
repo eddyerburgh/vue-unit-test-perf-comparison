@@ -19,10 +19,5 @@
     "tape": "^4.8.0",
     "vue": "^2.4.2",
     "vue-test-utils": "https://github.com/vuejs/vue-test-utils/"
-  },
-  "tape": {
-    "require": [
-      "./test/helpers/setup.js"
-    ]
   }
 }

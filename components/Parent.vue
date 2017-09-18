@@ -1,16 +1,16 @@
 <template>
   <div>
-    <basic v-for="item in items" :key={item} >{{item}}</basic>
+    <child v-for="item in items" :key={item} >{{item}}</child>
   </div>
 </template>
 
 <script>
-import Basic from './Basic.vue'
+import Child from './Child.vue'
 
 export default {
   name: 'parent',
   components: {
-    Basic
+    Child
   },
   data () {
     return {

@@ -1,50 +1,79 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 declare -a test_runners=("tape" "jest" "mocha-webpack" "karma-mocha" "ava")
 
-function generate_test_files() {
-	for ((i = 0; i < $1; i++)); do
-		cp Basic.spec.js "Basic$i.spec.js"
-		cp Parent.spec.js "Parent$i.spec.js"
+declare -a test_files=("Basic1" "Basic2" "Basic3" "Basic4" "Basic5" "Basic6" "Basic7" "Basic8" "Parent")
+
+remove_temp_directories() {
+	for test_runner in "${test_runners[@]}"; do
+		rm -rf "${test_runner}-temp"
 	done
 }
 
-function remove_test_files() {
+generate_test_files() {
 	for ((i = 0; i < $1; i++)); do
-		rm "Basic$i.spec.js"
-		rm "Parent$i.spec.js"
+		for test_file in "${test_files[@]}"; do
+			cp "${test_file}.spec.js" "${test_file}-${i}.spec.js"
+		done
 	done
 }
 
-function get_average_time_of_tests() {
+remove_test_files() {
+	for ((i = 0; i < $1; i++)); do
+		for test_file in "${test_files[@]}"; do
+			rm "${test_file}-${i}.spec.js"
+		done
+	done
+}
+
+get_average_time_of_tests() {
+	local sum
+	local average
 	generate_test_files "$1"
 	TIMEFORMAT=%R
 	declare -a results_arr
-	for i in {0..10}; do
+	for i in {1..3}; do
 		process_time=$(time (yarn test >/dev/null 2>&1) 2>&1)
 		results_arr[$i]=$process_time
 	done
-	SUM="$(echo "${results_arr[0]} + ${results_arr[1]} + ${results_arr[2]} + ${results_arr[3]} + ${results_arr[5]} + ${results_arr[6]} + ${results_arr[7]} + ${results_arr[8]} + ${results_arr[9]} + ${results_arr[10]}" | bc)"
-	AVERAGE="$(echo "scale=2; $SUM / 11" | bc -l)"
+	sum="$(echo "${results_arr[1]} + ${results_arr[2]} + ${results_arr[3]}" | bc)"
+	average="$(echo "scale=2; $sum / 3" | bc -l)"
 	remove_test_files "$1"
-	echo "$AVERAGE"
+	echo "$average"
 }
 
-cp results.template RESULTS.md
-
-for test_runner in "${test_runners[@]}"; do (
-	cd "${test_runner}" || echo "failed to change into ./${test_runner}"
+generate_table_row() {
+	local test_runner="$1"
+	local time_10
+	local time_100
+	local time_1000
+	local time_5000
+	cp -R "${test_runner}" "${test_runner}-temp"
+	cd "${test_runner}-temp" || echo "failed to change into ./${test_runner}-temp"
 	echo "getting average of 10 tests in $test_runner ..."
-	TIME_10=$(get_average_time_of_tests 1)
+	time_10=$(get_average_time_of_tests 1 "$test_runner")
 	echo "getting average of  100 tests in $test_runner ..."
-	TIME_100=$(get_average_time_of_tests 10)
+	time_100=$(get_average_time_of_tests 10)
 	echo "getting average of  1000 tests in $test_runner ..."
-	TIME_1000=$(get_average_time_of_tests 100)
-	echo "getting average of  10000 tests in $test_runner ..."
-	TIME_10000=$(get_average_time_of_tests 1000)
+	time_1000=$(get_average_time_of_tests 100)
+	echo "getting average of  5000 tests in $test_runner ..."
+	time_5000=$(get_average_time_of_tests 500)
 	echo "done, generating results row for $test_runner ..."
+	echo "| $test_runner | ${time_10}s |  ${time_100}s |  ${time_1000}s |  ${time_5000}s |" >>../RESULTS.md
+}
 
-	echo "| $test_runner | ${TIME_10}s |  ${TIME_100}s |  ${TIME_1000}s |  ${TIME_10000}s |" >>../RESULTS.md
+run_tests() {
+	cp results.template RESULTS.md
 
-)
-done
+	for test_runner in "${test_runners[@]}"; do (
+		generate_table_row "$test_runner"
+	)
+	done
+
+	remove_temp_directories
+}
+
+remove_temp_directories
+run_tests
+
+trap remove_temp_directories EXIT INT TERM
