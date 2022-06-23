@@ -15,7 +15,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "chai": "^4.1.0",
     "css-loader": "^0.28.4",
-    "jsdom": "^11.1.0",
+    "jsdom": "^16.5.0",
     "jsdom-global": "^3.0.2",
     "mocha": "^3.4.2",
     "mocha-webpack": "next",
